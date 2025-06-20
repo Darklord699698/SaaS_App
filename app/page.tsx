@@ -9,9 +9,9 @@ const Page = () => {
     <main>
       <h1 className='text-2xl underline'>Popular Companions</h1>
       <section className='home-section'>
-        <CompanionCard/>
-        <CompanionCard/>
-        <CompanionCard/>
+        <CompanionCard id="123" name="Neura the brainy explorer" topic="Derivatives and Integrals" subject="science" duration={45} color="#ffda6e" />
+        <CompanionCard id="456" name="Countsy the number wizard" topic="Derivatives and Integrals" subject="science" duration={30} color="#e5d0ff" />
+        <CompanionCard id="789" name="Verba the vocabulary builder" topic="language" subject="English Literature" duration={45} color="#ffda6e" />
       </section>
       <section className='home-section'>
         <CompanionsList/>
