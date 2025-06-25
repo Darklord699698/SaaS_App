@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/table"
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
+import Image from 'next/image';
 
 interface CompanionsListProps{
   title:string;
@@ -31,21 +32,20 @@ const CompanionsList = ({title,companions,classNames}: CompanionsListProps) => {
     </TableRow>
   </TableHeader>
   <TableBody>
-    {companions?.map((companion)=>(
-      <TableRow>
+    {companions?.map(({id,subject,name,topic,duration})=>(
+      <TableRow key={id}>
         <TableCell>
-          <Link  href={`/companions/${companion.id}`}>
-            {companion.subject}
+          <Link  href={`/companions/${id}`}>
+            <div className='flex items-center gap-2'>
+              <div>
+                <Image src={`/icons/${subject}.svg`} alt={subject} width={35} height={35} />
+              </div>
+            </div>
           </Link>
         </TableCell>
       </TableRow>
     ))}
-    <TableRow>
-      <TableCell className="font-medium">INV001</TableCell>
-      <TableCell>Paid</TableCell>
-      <TableCell>Credit Card</TableCell>
-      <TableCell className="text-right">$250.00</TableCell>
-    </TableRow>
+    
   </TableBody>
 </Table>
     </article>
